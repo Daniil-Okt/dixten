@@ -1,0 +1,184 @@
+.professional {
+    padding-top: rem(150);
+    @media(max-width:950px){
+        padding-top: 0;
+    }
+    &__container {
+        @media(max-width:850px){
+            background-color: #141D3D;
+        }
+    }
+    &__body {
+        padding: rem(57) rem(57) rem(60);
+        background-color: #141D3D;
+        border-radius: 16px;
+        @media(max-width:1200px){
+            padding: rem(36) rem(20) rem(42);
+        }
+        @media(max-width:850px){
+            max-width: rem(700);
+            margin: 0 auto;
+            padding: rem(57) 0  rem(60);
+        }
+    }
+    &__star {
+        max-width: rem(311);
+        margin-bottom: rem(34);
+        @include adaptiveClamp(max-width, 311, 202);
+        img {
+            width: 100%;
+        }
+        @media(max-width:850px){
+            display: none;
+        }
+    }
+    &__star-two {
+        display: none;
+        @media(max-width:850px){
+            display: block;
+            margin-bottom: rem(20);
+        }
+    }
+
+    &__title, &__title-mob {
+        max-width: rem(1140);
+        margin-bottom: rem(64);
+        @media(max-width:1200px){
+            margin-bottom: rem(20);
+        }
+        @media(max-width:850px){
+            @include adaptiveClamp(font-size, 45, 24);
+        }
+        @media(max-width:477px){
+            display: none;
+        }
+    }
+    &__title-mob {
+        display: none;
+        @media(max-width:477px){
+            // max-width: rem(240);
+            display: block;
+        }
+    }
+    &__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        // max-width: rem(1100);
+        @media(max-width:850px){
+            grid-template-columns: 1fr;
+            gap: rem(7);
+        }
+    }
+
+    &__item {
+    }
+}
+.item-prof {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: rem(27) rem(20);
+    position: relative;
+    // margin: 0 auto;
+    // max-width: rem(200);
+    @media(max-width:850px){
+        padding: 0;
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        width: rem(2);
+        height: 100%;
+        background: #3F51B5;
+        top:0;
+        right: rem(-1);
+        @media(max-width:850px){
+            display: none;
+        }
+    }
+    &:last-child {
+        &::before { 
+            display: none; 
+        }
+    }
+    &__body {
+        max-width: rem(220);
+        @media(max-width:850px){
+            max-width: 100%;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    &:first-child {
+        .item-prof__body {
+            @media(min-width:1201px){
+                min-width: rem(267);
+            }
+        }
+    }
+    &__title {
+        @include adaptiveClamp(font-size, 60, 48);
+        font-weight: 700;
+        margin-bottom: rem(13);
+        @media(max-width:850px){
+            margin-bottom: 0;
+        }
+    }
+    &__line {
+        display: none;
+        @media(max-width:850px){
+            display: flex;
+            align-items: center;
+            margin-left: rem(18);
+            flex: auto;
+            // margin-bottom: rem(13);
+            span {
+                display: block;
+                width: 100%;
+                height: rem(1);
+                background-color: #3F51B5;
+            }
+        }
+        @media(max-width:740px){
+            margin-right: rem(-20);
+        }
+    }
+    &:nth-child(2) {
+        .item-prof__line {
+            margin-left: rem(0);
+            margin-right: rem(18);
+            @media(max-width:740px){
+                margin-left: rem(-20);
+            }
+        }
+        @media(max-width:850px){
+            .item-prof__text {
+                p {
+                    margin-left: auto;
+                    text-align: right;
+                }
+            }
+        }
+    }
+    &__text {
+        max-width: rem(240);
+        @include adaptiveClamp(font-size, 18, 14);
+        @media(max-width:850px){
+            max-width: 100%;
+            flex: 100%;
+            p {
+                max-width: rem(250);
+            }
+        }
+    }
+   
+    &:last-child {
+        .item-prof__text {
+            max-width: rem(180);
+            @media(max-width:850px){
+                max-width: 100%;
+            }
+        }
+    }
+}
